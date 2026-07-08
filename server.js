@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// 2. GET - Preuzimanje svih zadataka (uz opciono filtriranje po statusu)
+// 2. GET - Preuzimanje svih zadataka
 app.get('/api/tasks', (req, res) => {
   const { status } = req.query;
   if (status) {
@@ -69,7 +69,7 @@ app.put('/api/tasks/:id', (req, res) => {
   res.json({ message: "Zadatak ažuriran", data: task });
 });
 
-// 5. Prošireni Health Check (Ovo profesorica Marijana eksplicitno ceni u Cloud-native radovima)
+// 5. Prošireni Health Check
 app.get('/health', (req, res) => {
   res.json({
     status: 'healthy',
