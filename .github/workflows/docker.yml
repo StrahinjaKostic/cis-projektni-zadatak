@@ -15,8 +15,7 @@ jobs:
       - name: Lint Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: Dockerfile
-
+          recursive: true
       - name: Login na Docker Hub
         uses: docker/login-action@v3
         with:
