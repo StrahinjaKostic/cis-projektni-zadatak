@@ -1,0 +1,1 @@
+# Seminarski rad - Od koda do kontejnera: automatizacija Docker Build procesa
