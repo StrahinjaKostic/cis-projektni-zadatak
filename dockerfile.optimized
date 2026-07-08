@@ -1,0 +1,16 @@
+# Faza 1 - build
+FROM node:20-slim AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --only=production
+
+# Faza 2 - produkcija
+FROM node:20-alpine
+WORKDIR /app
+#Non-root user (bezbjednost)
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+COPY --from=builder /app/node_modules ./node_modules
+COPY server.js .
+USER appuser
+EXPOSE 3000
+CMD ["node", "server.js"]
