@@ -85,3 +85,5 @@ app.get('/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`[🚀] DevOps Demo API uspešno pokrenut na portu ${PORT}`);
 });
+//provera
+//provera 2
